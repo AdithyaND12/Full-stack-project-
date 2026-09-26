@@ -395,6 +395,7 @@ Then open a Pull Request describing your changes.
 * [@AdithyaND12](https://github.com/AdithyaND12) — Owner / Maintainer
 * [@Apeksha-9683](https://github.com/Apeksha-9683) — Collaborator
 * [@ankush-cloud3](https://github.com/ankush-cloud3) — Collaborator
+* [@amrutashivakumarcs25-a11y](https://github.com/amrutashivakumarcs25-a11y) — Collaborator
 
 ---
 
