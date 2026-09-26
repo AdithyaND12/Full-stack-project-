@@ -390,6 +390,14 @@ Then open a Pull Request describing your changes.
 
 ---
 
+## 👥 Contributors
+
+* [@AdithyaND12](https://github.com/AdithyaND12) — Owner / Maintainer
+* [@Apeksha-9683](https://github.com/Apeksha-9683) — Collaborator
+* [@ankush-cloud3](https://github.com/ankush-cloud3) — Collaborator
+
+---
+
 ## ⚙️ Environment Variables
 
 Create a `.env` file for configuration values such as:
