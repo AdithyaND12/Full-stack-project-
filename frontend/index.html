@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CampusMart AI | Our Campus. Your Marketplace.</title>
+<script>(()=>{const t=localStorage.getItem("cm_theme")||"light";document.documentElement.classList.add(t);})();</script>
+<style>
+:root{--bg:#f8fbff;--card:#fff;--ink:#0f172a;--mut:#64748b;--line:#e2e8f0;--brand:#2563eb;--brand2:#4f46e5;--soft:#eaf2ff;--green:#10b981}
+html.dark{--bg:#070d18;--card:#0f172a;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;--soft:#0b1a33}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;box-shadow:0 6px 16px #2563eb44}
+.links{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.links button{background:none;border:none;color:var(--mut);font-weight:600;font-size:14px;padding:8px 12px;border-radius:10px;cursor:pointer}
+.links button.on,.links button:hover{color:var(--brand);background:var(--soft)}
+.sp{flex:1}.pill{font-size:12px;font-weight:700;background:#ecfdf5;color:#047857;border-radius:999px;padding:6px 12px}
+html.dark .pill{background:#064e3b;color:#6ee7b7}
+.btn{background:var(--brand);color:#fff;border:none;border-radius:12px;padding:11px 20px;font-weight:700;font-size:14px;cursor:pointer}
+.btn:hover{background:#1d4ed8}.btn.dark{background:#0f172a}html.dark .btn.dark{background:#fff;color:#0f172a}
+.btn.line{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.iconbtn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 10px;cursor:pointer;color:var(--ink)}
+/* hero */
+.hero{border-bottom:1px solid var(--line);background:var(--card);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:44px 0}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;color:var(--brand);margin-bottom:14px}
+h1{font-size:clamp(40px,6vw,62px);line-height:1.02;letter-spacing:-.03em;margin:0;font-weight:900}
+h1 .b{color:var(--brand)}
+.sub{color:var(--mut);font-size:17px;line-height:1.6;margin:18px 0;max-width:520px}
+.search{display:flex;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:0 15px 45px #2563eb1f;max-width:560px}
+.search input{flex:1;min-width:0;background:none;border:none;outline:none;padding:12px;font-size:14px;color:var(--ink)}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:13px;font-weight:600;color:var(--mut)}
+.trust i{width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;margin-right:6px}
+.cta{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.hero-img{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#dbeafe,#ede9fe);min-height:380px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+html.dark .hero-img{background:linear-gradient(135deg,#0b1a33,#1e1b4b)}
+.hero-img .big{font-size:110px}.hero-tag{position:absolute;top:16px;left:16px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;font-weight:800;color:var(--brand)}
+/* sections */
+.sec{padding:36px 0}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--brand);text-transform:uppercase}
+h2{font-size:30px;margin:6px 0;letter-spacing:-.02em}.secsub{color:var(--mut);font-size:14px;margin:0 0 18px}
+.catgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:860px){.catgrid{grid-template-columns:repeat(3,1fr)}}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 8px;text-align:center;cursor:pointer;transition:.2s}
+.cat:hover{transform:translateY(-3px);border-color:var(--brand);box-shadow:0 12px 28px #2563eb22}
+.cat .e{font-size:26px}.cat b{font-size:13px;display:block;margin-top:8px}.cat span{font-size:11px;color:var(--mut)}
+.strip{background:var(--card);border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);padding:6px 0}
+@media(max-width:860px){.strip{grid-template-columns:repeat(2,1fr)}}
+.strip div{padding:16px 20px;border-left:1px solid var(--line)}.strip div:first-child{border:none}
+.strip b{font-size:13px}.strip p{font-size:12px;color:var(--mut);margin:4px 0 0}
+/* cards */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:860px){.grid4{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s;cursor:pointer}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #2563eb22}
+.thumb{height:170px;background:linear-gradient(135deg,#dbeafe,#f0fdfa);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+html.dark .thumb{background:linear-gradient(135deg,#0b1a33,#052e26)}
+.type{position:absolute;left:10px;top:10px;background:var(--green);color:#fff;font-size:10px;font-weight:800;border-radius:999px;padding:5px 11px}
+.heart{position:absolute;right:10px;top:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;width:34px;height:30px;cursor:pointer;color:var(--mut)}
+.heart.fav{color:#ef4444}.cbody{padding:12px 14px}.cbody b{font-size:14px}.price{color:var(--brand);font-weight:900;margin-top:4px}.meta{font-size:11px;color:var(--mut);margin-top:2px}
+/* forms / views */
+.view{display:none}.view.on{display:block}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0}
+input,select,textarea{width:100%;padding:11px;margin:6px 0;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px}
+textarea{min-height:80px}button{font-family:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:640px){.row,.row3{grid-template-columns:1fr}}
+.msg{border-bottom:1px solid var(--line);padding:8px 0;font-size:14px}.msg small{color:var(--mut)}
+.chip{display:inline-block;background:var(--soft);color:var(--brand);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;margin:2px}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:26px 0;color:var(--mut);font-size:13px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+.err{color:#dc2626;font-size:13px}.ok{color:#059669;font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+  <div class="logo"><div class="logo-mark">◈</div>CampusMart <span style="font-weight:400;font-size:12px;color:var(--mut)">AI</span></div>
+  <div class="links">
+    <button data-v="home" class="on">Home</button>
+    <button data-v="market">Marketplace</button>
+    <button data-v="ai">✨ AI Finder</button>
+    <button data-v="sell">Sell</button>
+    <button data-v="req">Requests</button>
+    <button data-v="wish">♥ Wishlist <span id="wc"></span></button>
+    <button data-v="chat">Chat</button>
+  </div>
+  <div class="sp"></div>
+  <span class="pill">✓ Verified Students</span>
+  <button class="iconbtn" onclick="theme()" title="dark/light">◐</button>
+  <button class="btn line" id="authbtn" onclick="go('auth')">Login</button>
+</div></nav>
+
+<!-- HOME -->
+<div id="v-home" class="view on">
+  <div class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="badge">◈ Student-first marketplace · AI Powered</span>
+      <h1>Buy. <span class="b">Sell.</span><br>Exchange. <span class="b">Rent.</span></h1>
+      <p class="sub">AI-powered student-to-student marketplace. Buy, sell, exchange and rent products within your campus community.</p>
+      <div class="search"><input id="hq" placeholder="Search products, categories, or anything..."><button class="btn" onclick="quickSearch()">Search →</button></div>
+      <div class="trust"><span><i>✓</i>Verified Students</span><span><i>✓</i>Campus Pickup</span><span><i>✓</i>AI Assisted</span></div>
+      <div class="cta"><button class="btn dark" onclick="go('market')">Explore Marketplace →</button><button class="btn line" onclick="go('sell')">Start Selling</button></div>
+    </div>
+    <div class="hero-img"><span class="hero-tag">Student-first marketplace</span><div style="text-align:center"><div class="big">🎓🛍️</div><div style="font-weight:800">Our Campus. Your Marketplace.</div></div></div>
+  </div></div>
+
+  <div class="wrap sec">
+    <div class="catgrid" id="cats"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="strip">
+      <div><b>🛡 Safe &amp; Secure</b><p>Verified students &amp; secure transactions</p></div>
+      <div><b>💰 Great Deals</b><p>Save money with campus prices</p></div>
+      <div><b>👥 Student Community</b><p>Buy and sell within your campus</p></div>
+      <div><b>🌱 Sustainable Choice</b><p>Give useful products a second life</p></div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="eyebrow">Featured Listings</div>
+    <h2>Top Picks for You</h2>
+    <p class="secsub">Handpicked products from your campus community.</p>
+    <div class="grid4" id="feat"></div>
+  </div>
+</div>
+
+<!-- MARKETPLACE -->
+<div id="v-market" class="view"><div class="wrap sec">
+  <div class="eyebrow">Marketplace</div><h2>Buy Products</h2>
+  <div class="panel"><div class="row3">
+    <input id="mq" placeholder="keyword..."><select id="mcat"><option value="">All categories</option></select><input id="mmax" type="number" placeholder="max price">
+  </div><div class="row"><select id="mtype"><option value="">Any type</option><option value="sale">For Sale</option><option value="rent">For Rent</option><option value="service">Service</option></select><button class="btn" onclick="loadMarket()">Apply filters</button></div></div>
+  <div class="grid4" id="mgrid"></div>
+</div></div>
+
+<!-- AI FINDER -->
+<div id="v-ai" class="view"><div class="wrap sec">
+  <div class="eyebrow">CampusMart AI</div><h2>✨ AI Smart Finder</h2>
+  <p class="secsub">Describe what you need in plain words — e.g. <i>"laptop under 30000"</i>, <i>"book for rent"</i>, <i>"calculator below 700"</i>.</p>
+  <div class="panel"><div class="search" style="max-width:none"><input id="aiq" placeholder='Try: "cycle under 5000"...'><button class="btn" onclick="aiFind()">Ask AI →</button></div>
+  <div id="aichips" style="margin-top:10px"></div></div>
+  <div class="grid4" id="aigrid"></div>
+  <div class="panel"><b>🤖 Ask Campus AI <span class="small">(OpenRouter + live DBMS tools)</span></b>
+  <p class="secsub">Ask anything — e.g. "cheapest laptop?", "is seller 1 trusted?", "anything under ₹500 in Dorm?"</p>
+  <div class="search" style="max-width:none"><input id="askq" placeholder='Ask Campus AI...'><button class="btn" onclick="askAI()">Ask →</button></div>
+  <div id="asktools" style="margin-top:10px"></div>
+  <div id="askans" style="margin-top:10px;font-size:14px;line-height:1.6"></div>
+  <div class="grid4" id="askgrid" style="margin-top:10px"></div></div>
+  <div class="panel"><b>🤖 AI Scam Detection</b><p class="secsub">Every listing is screened: unverified sellers, off-campus emails and too-good-to-be-true prices get flagged automatically.</p><div id="scam"></div></div>
+</div></div>
+
+<!-- SELL -->
+<div id="v-sell" class="view"><div class="wrap sec">
+  <div class="eyebrow">Sell Products</div><h2>Start Selling</h2>
+  <div class="panel"><div class="row">
+    <select id="scat"></select><select id="stype"><option value="sale">For Sale</option><option value="rent">For Rent</option><option value="service">Service</option></select>
+  </div><input id="stitle" placeholder="Title — e.g. Casio fx-991ES Calculator">
+  <div class="row"><input id="sprice" type="number" placeholder="Price ₹"><select id="scond"><option value="used">Used</option><option value="like-new">Like New</option><option value="new">New</option></select></div>
+  <textarea id="sdesc" placeholder="Description, pickup spot (library / student center)..."></textarea>
+  <button class="btn" onclick="sell()">Publish listing</button> <span id="sellmsg"></span>
+  <div class="row" style="margin-top:10px"><input type="file" id="simg"><button class="btn line" onclick="upimg()">Upload photo</button></div></div>
+</div></div>
+
+<!-- REQUESTS -->
+<div id="v-req" class="view"><div class="wrap sec">
+  <div class="eyebrow">Exchange</div><h2>Want-to-Buy Requests</h2>
+  <div class="panel"><div class="row"><input id="rqt" placeholder="I need..."><input id="rqm" type="number" placeholder="max budget"></div>
+  <button class="btn" onclick="addReq()">Post request</button> <button class="btn line" onclick="loadReq()">Refresh</button></div>
+  <div id="reqlist"></div>
+</div></div>
+
+<!-- WISHLIST -->
+<div id="v-wish" class="view"><div class="wrap sec">
+  <div class="eyebrow">Wishlist</div><h2>Saved Items ♥</h2><div class="grid4" id="wgrid"></div>
+</div></div>
+
+<!-- CHAT -->
+<div id="v-chat" class="view"><div class="wrap sec">
+  <div class="eyebrow">Chat</div><h2>Messages 💬</h2>
+  <div class="panel"><div class="row"><input id="ccid" type="number" placeholder="conversation id"><button class="btn" onclick="openChat()">Open</button></div>
+  <div id="cmsgs"></div>
+  <div class="row" style="margin-top:8px"><input id="cmbody" placeholder="type a message..."><button class="btn" onclick="sendMsg()">Send</button></div>
+  <div class="secsub">Tip: press “💬 Chat” on any listing to start a conversation, then refresh here.</div></div>
+</div></div>
+
+<!-- AUTH -->
+<div id="v-auth" class="view"><div class="wrap sec">
+  <div class="eyebrow">Account</div><h2>Join with campus email</h2>
+  <div class="panel" style="max-width:440px"><input id="aname" placeholder="Full name (register)">
+  <input id="aemail" placeholder="you@bmsce.ac.in"><input id="apw" type="password" placeholder="password">
+  <div class="row"><button class="btn" onclick="doReg()">Register</button><button class="btn line" onclick="doLogin()">Login</button></div>
+  <div id="amsg"></div></div>
+</div></div>
+
+<footer><div class="wrap"><div class="fgrid">
+  <div><b style="color:var(--ink)">◈ CampusMart AI</b><p>AI-powered student-to-student marketplace. Our Campus. Your Marketplace.</p><p><span class="pill">✓ Verified Students</span> <span class="pill">✨ AI Powered</span></p></div>
+  <div><b style="color:var(--ink)">Marketplace</b><p>Buy Products<br>Sell Products<br>Exchange · Rent</p></div>
+  <div><b style="color:var(--ink)">CampusMart AI</b><p>✨ AI Smart Finder<br>🛡 AI Scam Detection<br>👥 Student Commerce</p></div>
+</div><p>© 2026 CampusMart AI · Built for students · DBMS project (MySQL + FastAPI)</p></div></footer>
+
+<script>
+const H=()=>token?{Authorization:"Bearer "+token,"Content-Type":"application/json"}:{"Content-Type":"application/json"};
+let token=localStorage.getItem("cm_token")||"",me=JSON.parse(localStorage.getItem("cm_me")||"null"),lastId=null;
+let CATS=[],ALL=[];
+const EMOJI={Books:"📚",Electronics:"💻",Cycles:"🚲",Furniture:"🪑",Clothing:"👕",Accessories:"⌚",Sports:"⚽",Notes:"📝",Academic:"📚",Dorm:"🛏",Vehicle:"🚲","Skill Services":"🛠",Other:"📦"};
+const ez=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function theme(){const h=document.documentElement;const d=h.classList.toggle("dark");h.classList.toggle("light",!d);localStorage.setItem("cm_theme",d?"dark":"light");}
+function go(v){document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));document.getElementById("v-"+v).classList.add("on");document.querySelectorAll(".links button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));window.scrollTo(0,0);if(v==="market")loadMarket();if(v==="wish")loadWish();if(v==="req")loadReq();}
+document.querySelectorAll(".links button").forEach(b=>b.onclick=()=>go(b.dataset.v));
+function favs(){return JSON.parse(localStorage.getItem("cm_fav")||"[]");}
+function isFav(id){return favs().includes(id);}
+function toggleFav(e,id){e.stopPropagation();let f=favs();f=f.includes(id)?f.filter(x=>x!==id):[...f,id];localStorage.setItem("cm_fav",JSON.stringify(f));wc.innerText=f.length||"";refreshHearts();}
+function refreshHearts(){document.querySelectorAll(".heart").forEach(h=>h.classList.toggle("fav",isFav(+h.dataset.id)));}
+function card(l){return `<div class="card" onclick="startChat(${l.listing_id})"><div class="thumb"><span>${EMOJI[l.cat]||"📦"}</span><span class="type">${l.type==="rent"?"For Rent":l.type==="service"?"Service":"For Sale"}</span><button class="heart ${isFav(l.listing_id)?"fav":""}" data-id="${l.listing_id}" onclick="toggleFav(event,${l.listing_id})">♥</button></div><div class="cbody"><b>${ez(l.title)}</b><div class="price">₹${l.price}</div><div class="meta">${ez(l.cat||"")} · ${ez(l.condition||"")} · 💬 chat</div></div></div>`;}
+// ---- data ----
+async function init(){
+  const c=await(await fetch("/categories")).json();CATS=c;
+  const counts={};ALL=await(await fetch("/listings")).json();
+  ALL.forEach(l=>counts[l.category_id]=(counts[l.category_id]||0)+1);
+  const order=["Books","Electronics","Cycles","Furniture","Clothing","Accessories","Sports","Notes","Other"];
+  const cmap={};c.forEach(x=>cmap[x.name]=x);
+  cats.innerHTML=[...c.map(x=>x.name),...order.filter(o=>!cmap[o])].slice(0,9).map(n=>{const id=cmap[n]?.category_id;const k=Object.keys(counts).find(k=>cmap[n]&&+k===cmap[n].category_id);return `<div class="cat" onclick="filterCat('${ez(n)}')"><div class="e">${EMOJI[n]||"📦"}</div><b>${ez(n)}</b><span>${k?counts[k]+" items":"browse →"}</span></div>`;}).join("");
+  mcat.innerHTML='<option value="">All categories</option>'+c.map(x=>`<option value="${ez(x.name)}">${ez(x.name)}</option>`).join("");
+  scat.innerHTML=c.map(x=>`<option value="${x.category_id}">${ez(x.name)}</option>`).join("");
+  feat.innerHTML=ALL.slice(0,4).map(card).join("")||"No listings yet — be the first to sell!";
+  refreshHearts();wc.innerText=favs().length||"";
+  if(me)authbtn.innerText=me.name.split(" ")[0];
+  // scam screen
+  const bad=ALL.filter(l=>+l.price<=0||/free money|lottery|advance/i.test(l.description||""));
+  scam.innerHTML=bad.length?bad.map(l=>`⚠️ <b>${ez(l.title)}</b> flagged for review`).join("<br>"):`✅ Scanned ${ALL.length} listings — no threats found. Sellers verified via campus email.`;
+}
+function filterCat(n){go("market");mcat.value=n;loadMarket();}
+function quickSearch(){go("market");mq.value=hq.value;loadMarket();}
+async function loadMarket(){
+  const p=new URLSearchParams({});if(mq.value)p.set("q",mq.value);if(mcat.value)p.set("category",mcat.value);if(mmax.value)p.set("max_price",mmax.value);
+  const j=await(await fetch("/listings?"+p)).json();
+  const t=mtype.value;const f=t?j.filter(l=>l.type===t):j;
+  mgrid.innerHTML=f.map(l=>({...l,cat:(CATS.find(c=>c.category_id===l.category_id)||{}).name})).map(card).join("")||"Nothing found — try AI Finder ✨";
+  refreshHearts();
+}
+// ---- AI finder: parse budget, category, type, condition ----
+function aiParse(s){
+  s=s.toLowerCase();const out={};
+  let m=s.replace(/,/g,"").match(/(?:under|below|max|budget|less than|within|upto|up to)\s*[₹rs.\s]*(\d[\d]*)/)||s.match(/[₹]\s*(\d[\d]*)/);
+  if(m)out.max_price=+m[1];
+  const cats=[["book",["book","novel","textbook","navathe"]],["Electronics",["laptop","mobile","phone","monitor","keyboard","calculator","electronic","gadget"]],["Cycles",["cycle","bike","bicycle"]],["Dorm",["lamp","furniture","chair","table","bed","hostel","storage","box"]],["Vehicle",["helmet","vehicle","lock"]],["Skill Services",["tutor","design","service","repair","python","poster"]],["Academic",["notes","record","lab","exam"]]];
+  for(const[n,ks]of cats)if(ks.some(k=>s.includes(k))){out.cat=n;break;}
+  if(/rent/.test(s))out.type="rent";else if(/service|tutor|design/.test(s))out.type="service";
+  if(/new/.test(s))out.cond="new";
+  out.q=s.replace(/(under|below|max|budget|less than|within|upto|up to)\s*[₹rs.\s]*\d[\d]*/g,"").replace(/for rent|for sale|rent|buy|need|want|find|show|me|a|an|the|please|under|with|in|good/i," ").trim().split(/\s+/).filter(w=>w.length>2).slice(0,3).join(" ");
+  return out;
+}
+async function aiFind(){
+  const p=aiParse(aiq.value);const chips=[];
+  if(p.q)chips.push("🔎 “"+ez(p.q)+"”");if(p.cat)chips.push("📂 "+p.cat);if(p.max_price)chips.push("💰 under ₹"+p.max_price);if(p.type)chips.push("🏷 "+p.type);
+  aichips.innerHTML=chips.map(c=>`<span class="chip">${c}</span>`).join("")||'<span class="chip">showing everything</span>';
+  const q=new URLSearchParams({});if(p.q)q.set("q",p.q);if(p.cat)q.set("category",p.cat);if(p.max_price)q.set("max_price",p.max_price);
+  let j=await(await fetch("/listings?"+q)).json();
+  if(p.type)j=j.filter(l=>l.type===p.type);
+  aigrid.innerHTML=j.map(l=>({...l,cat:(CATS.find(c=>c.category_id===l.category_id)||{}).name})).map(card).join("")||"No match — try fewer words or post a Request.";
+  refreshHearts();
+}
+async function askAI(){
+  const q=askq.value.trim();if(!q)return;
+  askans.innerHTML='<span class="small">🤔 Campus AI is thinking (OpenRouter)...</span>';asktools.innerHTML="";askgrid.innerHTML="";
+  try{
+    const r=await fetch("/agent/ask",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q})});
+    const j=await r.json();
+    if(!r.ok){askans.innerHTML='<span class="err">'+ez(j.detail||"Agent error")+"</span>";return;}
+    askans.innerHTML=ez(j.answer).replace(/\n/g,"<br>");
+    asktools.innerHTML=(j.tools_used||[]).map(t=>`<span class="chip">🔧 ${ez(t)}</span>`).join("");
+    if(j.listing_ids&&j.listing_ids.length){
+      const all=await(await fetch("/listings")).json();
+      const hit=all.filter(l=>j.listing_ids.includes(l.listing_id)).map(l=>({...l,cat:(CATS.find(c=>c.category_id===l.category_id)||{}).name}));
+      askgrid.innerHTML=hit.map(card).join("");refreshHearts();
+    }
+  }catch(e){askans.innerHTML='<span class="err">Is OPENROUTER_API_KEY set? Add it to backend/.env and restart.</span>';}
+}
+// ---- sell / auth / chat / requests ----
+async function sell(){
+  if(!token)return go("auth");
+  const r=await fetch("/listings",{method:"POST",headers:H(),body:JSON.stringify({category_id:+scat.value,title:stitle.value,price:+sprice.value,type:stype.value,condition:scond.value,description:sdesc.value})});
+  const j=await r.json();lastId=j.listing_id;
+  sellmsg.innerHTML=r.ok?`<span class="ok">✅ Published! id ${lastId}</span>`:`<span class="err">Failed: ${ez(JSON.stringify(j))}</span>`;
+  ALL=await(await fetch("/listings")).json();
+}
+async function upimg(){
+  if(!lastId)return sellmsg.innerHTML='<span class="err">Publish first</span>';
+  const f=simg.files[0];if(!f)return;const fd=new FormData();fd.append("file",f);
+  const r=await fetch(`/listings/${lastId}/image`,{method:"POST",headers:{Authorization:"Bearer "+token},body:fd});
+  sellmsg.innerHTML=r.ok?"✅ Photo added":"❌ "+await r.text();
+}
+async function doReg(){const r=await fetch("/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:aname.value,university_email:aemail.value,password:apw.value})});amsg.innerHTML=r.ok?'<span class="ok">Registered! Now Login.</span>':'<span class="err">'+await r.text()+"</span>";}
+async function doLogin(){const r=await fetch("/auth/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({university_email:aemail.value,password:apw.value})});const j=await r.json();if(j.token){token=j.token;me=j.user;localStorage.setItem("cm_token",token);localStorage.setItem("cm_me",JSON.stringify(me));authbtn.innerText=me.name.split(" ")[0];amsg.innerHTML='<span class="ok">Welcome, '+ez(me.name)+'!</span>';go("home");}else amsg.innerHTML='<span class="err">Login failed</span>';}
+async function startChat(id){
+  if(!token){go("auth");return;}
+  const r=await fetch("/conversations",{method:"POST",headers:H(),body:JSON.stringify({listing_id:id})});
+  const j=await r.json();go("chat");ccid.value=j.conversation_id;openChat();
+}
+async function openChat(){const r=await fetch(`/conversations/${ccid.value}/messages`,{headers:H()});const j=await r.json();cmsgs.innerHTML=j.map(m=>`<div class="msg"><small>#${m.sender_id} · ${m.sent_at||""}</small><br>${ez(m.body)}</div>`).join("")||"No messages yet — say hi!";}
+async function sendMsg(){await fetch("/messages",{method:"POST",headers:H(),body:JSON.stringify({conversation_id:+ccid.value,body:cmbody.value})});cmbody.value="";openChat();}
+async function addReq(){if(!token)return go("auth");await fetch("/requests",{method:"POST",headers:H(),body:JSON.stringify({title:rqt.value,max_price:+rqm.value||null})});rqt.value="";loadReq();}
+async function loadReq(){const j=await(await fetch("/requests")).json();reqlist.innerHTML=j.map(x=>`<div class="panel">🔄 <b>${ez(x.title)}</b> <span class="chip">max ₹${x.max_price??"—"}</span></div>`).join("")||"No open requests.";}
+function loadWish(){const f=favs();const items=ALL.filter(l=>f.includes(l.listing_id)).map(l=>({...l,cat:(CATS.find(c=>c.category_id===l.category_id)||{}).name}));wgrid.innerHTML=items.map(card).join("")||"Nothing saved yet — tap ♥ on any listing.";refreshHearts();}
+init();
+</script>
+</body>
+</html>

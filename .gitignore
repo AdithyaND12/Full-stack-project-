@@ -1,0 +1,17 @@
+# Secrets — never commit live keys
+backend/.env
+
+# Uploads (user content)
+backend/uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
